@@ -11,6 +11,11 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 
 add_executable(search_engine
     src/main.cpp
+    src/DocumentParser.cpp
+)
+
+target_include_directories(search_engine PRIVATE
+    include
 )
 
 target_compile_options(search_engine PRIVATE
