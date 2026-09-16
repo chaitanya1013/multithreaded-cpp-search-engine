@@ -1,4 +1,5 @@
 #include "DocumentParser.h"
+#include "InvertedIndex.h"
 
 #include <iostream>
 #include <string>
@@ -6,16 +7,32 @@
 
 int main() {
     DocumentParser parser;
+    InvertedIndex index;
 
-    std::string text =
-        "Hello, WORLD! This is a C++ Search Engine.";
+    std::vector<std::string> documents = {
+        "C++ is fast and powerful",
+        "C++ is used for system programming",
+        "Python is simple and powerful"
+    };
 
-    std::vector<std::string> tokens = parser.tokenize(text);
+    // Parse and index every document
+    for (int i = 0; i < static_cast<int>(documents.size()); ++i) {
+        std::vector<std::string> tokens =
+            parser.tokenize(documents[i]);
 
-    std::cout << "Tokens:\n";
+        index.addDocument(i + 1, tokens);
+    }
 
-    for (const std::string& token : tokens) {
-        std::cout << token << '\n';
+    // Search for a word
+    std::string query = "c++";
+
+    std::set<int> results = index.search(query);
+
+    std::cout << "Search query: " << query << '\n';
+    std::cout << "Documents found:\n";
+
+    for (int documentId : results) {
+        std::cout << "Document " << documentId << '\n';
     }
 
     return 0;
