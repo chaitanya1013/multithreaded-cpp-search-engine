@@ -15,6 +15,7 @@ add_executable(search_engine
     src/DocumentReader.cpp
     src/DocumentStore.cpp
     src/InvertedIndex.cpp
+    src/TFIDF.cpp
 )
 
 target_include_directories(search_engine PRIVATE
