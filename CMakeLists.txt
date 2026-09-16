@@ -13,6 +13,7 @@ add_executable(search_engine
     src/main.cpp
     src/DocumentParser.cpp
     src/DocumentReader.cpp
+    src/DocumentStore.cpp
     src/InvertedIndex.cpp
 )
 
