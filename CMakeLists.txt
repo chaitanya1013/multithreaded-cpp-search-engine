@@ -12,6 +12,7 @@ set(CMAKE_CXX_EXTENSIONS OFF)
 add_executable(search_engine
     src/main.cpp
     src/DocumentParser.cpp
+    src/DocumentReader.cpp
     src/InvertedIndex.cpp
 )
 

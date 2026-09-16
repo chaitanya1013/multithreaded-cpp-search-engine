@@ -1,0 +1,2 @@
+Python is popular for data science and machine learning.
+Python is easy to learn.

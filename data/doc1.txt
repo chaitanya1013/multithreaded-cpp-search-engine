@@ -1,0 +1,2 @@
+C++ is a powerful programming language.
+C++ is widely used for system programming.
